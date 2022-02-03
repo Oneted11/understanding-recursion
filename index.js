@@ -1,20 +1,18 @@
-console.log("hi there");
+// console.log("hi there");
 const myarr = [9, 8, 3, 6, 7, 4];
 
 const accumulator = (arr, acc) => {
   //do add to acc
-  //   i = 1;
+  console.log("array.legth", arr.length);
   if (arr.length == 0) {
-    console.log(acc, arr.length);
-
+    console.log("1=>", acc);
     return acc;
-  } else {
-    acc = acc + Number(arr.shift());
-
-    accumulator(arr, acc);
-    console.log(acc, arr.length);
   }
-  return acc;
+  const num = arr.pop();
+  // acc = acc + Number(arr.pop());
+  console.log("logging steps=>", acc, "with", num);
+  accumulator(arr, acc + Number(num));
 };
-const sum = 0;
-console.log("the ans=>", accumulator(myarr, sum));
+
+const calling = accumulator(myarr, (sum = 0));
+console.log("calling", calling);
