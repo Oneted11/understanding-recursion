@@ -1,18 +1,19 @@
 // console.log("hi there");
 const myarr = [9, 8, 3, 6, 7, 4];
 
-const accumulator = (arr, acc) => {
+const accumulator = (acc, arr) => {
+  // console.log("bloody arr", arr);
   //do add to acc
-  console.log("array.legth", arr.length);
-  if (arr.length == 0) {
-    console.log("1=>", acc);
-    return acc;
-  }
+  // console.log("array.legth", arr.length);
+
+  if (arr.length == 0) return acc;
+  // console.log("1=>", acc);
+
   const num = arr.pop();
-  // acc = acc + Number(arr.pop());
+  acc = acc + Number(num);
   console.log("logging steps=>", acc, "with", num);
-  accumulator(arr, acc + Number(num));
+  accumulator(acc, arr);
 };
 
-const calling = accumulator(myarr, (sum = 0));
+const calling = accumulator((sum = 0), myarr);
 console.log("calling", calling);
